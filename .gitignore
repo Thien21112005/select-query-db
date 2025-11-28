@@ -80,7 +80,6 @@ src/main/resources/.env
 database.properties  # Nếu bạn tạo file config riêng
 
 # Docker ignore (nếu có volumes hoặc build artifacts)
-*.dockerignore
 docker-compose.yml  # Nếu dùng cục bộ, không push nếu có secrets
 volumes/  # Thêm: Ignore Docker volumes data nếu có
 data/  # Thêm: Ignore data folders nếu project có DB local dump
