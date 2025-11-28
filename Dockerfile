@@ -21,10 +21,6 @@ LABEL maintainer="your-email@example.com" \
 # Remove Tomcat's default webapps to avoid conflicts
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Create a non-root user for security (optional but recommended)
-RUN useradd -m appuser && chown -R appuser /usr/local/tomcat
-USER appuser
-
 # Copy the built WAR file from Stage 1 into Tomcat's webapps folder
 COPY --from=builder /app/target/EmailListWebApp.war /usr/local/tomcat/webapps/ROOT.war
 
