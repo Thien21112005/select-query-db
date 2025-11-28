@@ -33,7 +33,7 @@
       <artifactId>jstl</artifactId>
       <version>1.2</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
@@ -44,7 +44,7 @@
   <build>
     <finalName>EmailListWebApp</finalName>
     <plugins>
-      <!-- Plugin biên dịch bằng JDK 17 -->
+      <!-- Compiler plugin cho JDK 17 -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -54,24 +54,8 @@
           <target>17</target>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <version>3.5.0</version>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>copy</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${project.build.directory}/lib</outputDirectory>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
 
-      <!-- ✅ Plugin đóng WAR tương thích JDK mới -->
+      <!-- Plugin đóng WAR chuẩn -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
